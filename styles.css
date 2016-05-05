@@ -1,0 +1,145 @@
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: url('images/bg.jpg') repeat fixed center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+@font-face {
+    font-family: 'Cantarell';
+    src: url('fonts/Cantarell.ttf');
+}
+
+#spanner {
+    position: relative;
+    height: auto;
+    width: 100%;
+}
+#wrapper {
+    position: fixed;
+    background: rgba(152, 49, 240, 0.25);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+#centerer,
+#centerer2 {
+    display: flex;
+    max-height: 50%;
+    align-items: center;
+    justify-content: center;
+}
+.box {
+    position: relative;
+    display: inline-block;
+    width: 20%;
+    margin: 2%;
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    overflow: hidden;
+    -webkit-transition: 0.3s ease-out; 
+            transition: 0.3s ease-out;
+}
+.box:hover {
+    transform: scale(1.1);
+}
+.hover {
+    display: none;
+}
+.box:hover + .hover {
+    display: block;
+}
+.box img {
+    margin-bottom: -5px;
+    width: 105%;
+    height: 105%;
+}
+
+
+
+
+
+
+
+
+/* --- PRE-LOADER (cf. style.js)--- */
+
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    background: url('images/logo.png') no-repeat;
+    background-size: 50vh auto;
+    height: 30vh;
+    margin: -15vh 0 0 -25vh;
+    z-index: 1500;
+}
+#loader img {
+    vertical-align: top;
+    width: 100%; /* max width */
+    opacity: 0;
+}
+
+#loader-wrapper .loader-section {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 51%;
+    background: #9731F0;
+    z-index: 1000;
+}
+#loader-wrapper .loader-section.section-left {
+    top: 0;
+}
+#loader-wrapper .loader-section.section-right {
+    bottom: 0;
+}
+
+.loaded #loader {
+    opacity: 0;
+    -webkit-transition: all 0.5s ease-out; 
+            transition: all 0.5s ease-out;
+}
+.loaded #loader-wrapper .loader-section.section-left {
+    -webkit-transform: translateY(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateY(-100%);  /* IE 9 */
+    transform: translateY(-100%);  /* Firefox 16+, IE 10+, Opera */
+}
+.loaded #loader-wrapper .loader-section.section-right {
+    -webkit-transform: translateY(100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateY(100%);  /* IE 9 */
+    transform: translateY(100%);  /* Firefox 16+, IE 10+, Opera */
+}
+.loaded #loader-wrapper .loader-section.section-right,
+.loaded #loader-wrapper .loader-section.section-left {
+    -webkit-transition: all 0.5s 0.5s ease-out; 
+            transition: all 0.5s 0.5s ease-out;
+}
+.loaded #loader-wrapper {
+        -webkit-transform: translateX(-100%);
+            -ms-transform: translateX(-100%);
+                transform: translateX(-100%);
+ 
+        -webkit-transition: all 0.5s 1s ease-out; 
+                transition: all 0.5s 1s ease-out;
+}
+.loaded #loader-wrapper {
+    visibility: hidden;
+}
+
+/* and in case js isn't enabled... */
+.no-js #loader-wrapper {
+    display: none;
+}
