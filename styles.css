@@ -18,6 +18,12 @@ body {
     align-items: center;
     justify-content: center;
 }
+@-moz-document url-prefix() {
+    #centerer,
+    #centerer2 {
+        margin: 2% 0;
+    }
+}
 .box {
     position: relative;
     display: inline-block;
@@ -74,6 +80,42 @@ body {
 #multi-wrap img {
     max-height: 95vh;
     max-width: 95vw;
+}
+#profile-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 25px;
+    background: rgba(0,0,0,0.5);
+    color: #7D7D7D;
+    z-index: 10;
+    visibility: hidden;
+    font-family: 'Ubuntu';
+    font-size: 1.5em;
+    text-align: center;
+}
+#profile-wrap a {
+    color: #C6C6C6;
+    text-decoration: none;
+}
+#profile-wrap a:hover {
+    color: #ECECEC;
+}
+#contact-close {
+    display: inline-block;
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    color: #FFF8FA;
+    font-size: 48px;
+    cursor:pointer;
+}
+h1 {
+    color: #C6C6C6;
+    text-align: center;
+    font-size: 1em;
 }
 
 
@@ -133,6 +175,7 @@ body {
     padding: 13px;
     color: #7D7D7D;
     margin: auto;
+    margin-top: -15px;
     font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
     text-align: center;
     border-radius: 4px;

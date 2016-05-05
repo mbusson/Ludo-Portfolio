@@ -4,6 +4,7 @@
 	<title></title>
 	 <link rel='shortcut icon' href='favicon.ico' type='image/x-icon'/ >
 	 <link rel="stylesheet" href="styles.css">
+	 <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 	 <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 </head>
 <body>
@@ -39,13 +40,18 @@
 		<a href="#menu" id="toggle"><span></span></a>
 		<div id="menu">
 			<ul>
-				<li><a href="#home"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
-				<li><a href="../"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+				<li><a href="#" id='contact'><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+				<li><a href="../"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
 			</ul>
 		</div>
 	</div>
-	<div id="multi-wrap">
-
+	<div id="multi-wrap"></div>
+	<div id="profile-wrap">
+		<a id='contact-close'>&times;</a>
+		<h1>Ludovica Schiariti</h1>
+		<p>
+			Find me on <a href="https://www.facebook.com/profile.php?id=100011256067635">Facebook</a>!<br>
+		</p>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>

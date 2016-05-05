@@ -10,7 +10,7 @@ $(document).ready(function(){
 	function startFinalAnimation(){
     	var fa = new TimelineLite();
     	fa.from("#wrapper", 2, {backgroundColor:"rgba(0,0,0, 0.75)", ease:Back.easeIn});
-		fa.staggerFrom(".box", 0.25, {opacity:0, x:-250, y:-150, ease:Back.easeIn}, 0.2);
+		fa.staggerFrom(".box", 1, {opacity:0, ease:Back.easeIn}, 0.2);
 		fa.set(".box", {clearProps:"all"});
 	};
 		startFinalAnimation();
@@ -58,12 +58,12 @@ $(document).ready(function(){
 	}
 
 // --- CALLS ---
-var polpo = '<img src="images/polpo.jpg">',
-	medusa = '<img src="images/medusa.jpg">',
-	sirena = '<img src="images/sirena.jpg">',
-	ippo = '<img src="images/ippocampo.jpg">',
-	lepisma = '<img src="images/lepisma.jpg">',
-	pesce = '<img src="images/pesce.jpg">';
+var polpo = '<img src="images/polpo-full.jpg">',
+	medusa = '<img src="images/medusa-full.jpg">',
+	sirena = '<img src="images/sirena-full.jpg">',
+	ippo = '<img src="images/ippocampo-full.jpg">',
+	lepisma = '<img src="images/lepisma-full.jpg">',
+	pesce = '<img src="images/pesce-full.jpg">';
 
 	$('#multi-wrap').click(function() {
 		$(this).empty();
@@ -92,6 +92,12 @@ var polpo = '<img src="images/polpo.jpg">',
 	$('#pesce').click(function() {
 		$('#multi-wrap').css('visibility', 'visible');
 		$('#multi-wrap').append(pesce);
+	});
+	$('#contact').click(function() {
+		$('#profile-wrap').css('visibility', 'visible');
+	});
+	$('#contact-close').click(function() {
+		$('#profile-wrap').css('visibility', 'hidden');
 	});
 
 });
