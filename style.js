@@ -4,12 +4,12 @@ $(document).ready(function(){
  
     setTimeout(function(){
         $('body').addClass('loaded');
-    }, 1000);
+    }, 1750);
 
 // --- GSAP ---
 	function startFinalAnimation(){
     	var fa = new TimelineLite();
-    	fa.from("#wrapper", 2, {backgroundColor:"rgba(0,0,0, 0.75)", ease:Back.easeIn});
+    	fa.from("#wrapper", 1.7, {backgroundColor:"rgba(0,0,0, 0.75)", ease:Back.easeIn});
 		fa.staggerFrom(".box", 1, {opacity:0, ease:Back.easeIn}, 0.2);
 		fa.set(".box", {clearProps:"all"});
 	};
