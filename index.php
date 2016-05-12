@@ -46,7 +46,9 @@
 			</ul>
 		</div>
 	</div>
-	<div id="multi-wrap"></div>
+	<div id="multi-wrap">
+		<a id='image-close'>&times;</a>
+	</div>
 	<div id="profile-wrap">
 		<a id='contact-close'>&times;</a>
 		<h1>Ludovica Schiariti</h1>
