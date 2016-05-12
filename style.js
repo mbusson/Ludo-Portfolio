@@ -58,6 +58,12 @@ $(document).ready(function(){
 	}
 
 // --- CALLS ---
+
+cleanCanvas = function() {
+	$('#multi-wrap').empty();
+	$('#multi-wrap').css('visibility', 'hidden');
+};
+
 var polpo = '<img src="images/polpo-full.jpg">',
 	medusa = '<img src="images/medusa-full.jpg">',
 	sirena = '<img src="images/sirena-full.jpg">',
@@ -70,29 +76,43 @@ var polpo = '<img src="images/polpo-full.jpg">',
 		$(this).css('visibility', 'hidden')
 	});
 	$('#polpo').click(function() {
-		$('#multi-wrap').css('visibility', 'visible');
-		$('#multi-wrap').append(polpo);
+		cleanCanvas();
+			$('#multi-wrap').css('visibility', 'visible');
+			$('#multi-wrap').append(polpo);
 	});
 	$('#medusa').click(function() {
-		$('#multi-wrap').css('visibility', 'visible');
-		$('#multi-wrap').append(medusa);
+		cleanCanvas();
+			$('#multi-wrap').css('visibility', 'visible');
+			$('#multi-wrap').append(medusa);
 	});
 	$('#sirena').click(function() {
-		$('#multi-wrap').css('visibility', 'visible');
-		$('#multi-wrap').append(sirena);
+		cleanCanvas();
+			$('#multi-wrap').css('visibility', 'visible');
+			$('#multi-wrap').append(sirena);
 	});
 	$('#ippo').click(function() {
-		$('#multi-wrap').css('visibility', 'visible');
-		$('#multi-wrap').append(ippo);
+		cleanCanvas();
+			$('#multi-wrap').css('visibility', 'visible');
+			$('#multi-wrap').append(ippo);
 	});
 	$('#lepisma').click(function() {
-		$('#multi-wrap').css('visibility', 'visible');
-		$('#multi-wrap').append(lepisma);
+		cleanCanvas();
+			$('#multi-wrap').css('visibility', 'visible');
+			$('#multi-wrap').append(lepisma);
 	});
 	$('#pesce').click(function() {
-		$('#multi-wrap').css('visibility', 'visible');
-		$('#multi-wrap').append(pesce);
+		cleanCanvas();
+			$('#multi-wrap').css('visibility', 'visible');
+			$('#multi-wrap').append(pesce);
 	});
+
+
+		//$('#image-close').css('visibility', 'visible');
+		$('#image-close').click(function() {
+			$('#multi-wrap').css('visibility', 'hidden');
+		});
+
+
 	$('#contact').click(function() {
 		$('#profile-wrap').css('visibility', 'visible');
 	});
