@@ -69,7 +69,8 @@ var polpo = '<img src="images/polpo-full.jpg">',
 	sirena = '<img src="images/sirena-full.jpg">',
 	ippo = '<img src="images/ippocampo-full.jpg">',
 	lepisma = '<img src="images/lepisma-full.jpg">',
-	pesce = '<img src="images/pesce-full.jpg">';
+	pesce = '<img src="images/pesce-full.jpg">',
+	imgX = '<a id="image-close">&times;</a>';
 
 	$('#multi-wrap').click(function() {
 		$(this).empty();
@@ -78,37 +79,42 @@ var polpo = '<img src="images/polpo-full.jpg">',
 	$('#polpo').click(function() {
 		cleanCanvas();
 			$('#multi-wrap').css('visibility', 'visible');
+			$('#multi-wrap').append(imgX);
 			$('#multi-wrap').append(polpo);
 	});
 	$('#medusa').click(function() {
 		cleanCanvas();
 			$('#multi-wrap').css('visibility', 'visible');
+			$('#multi-wrap').append(imgX);
 			$('#multi-wrap').append(medusa);
 	});
 	$('#sirena').click(function() {
 		cleanCanvas();
 			$('#multi-wrap').css('visibility', 'visible');
+			$('#multi-wrap').append(imgX);
 			$('#multi-wrap').append(sirena);
 	});
 	$('#ippo').click(function() {
 		cleanCanvas();
 			$('#multi-wrap').css('visibility', 'visible');
+			$('#multi-wrap').append(imgX);
 			$('#multi-wrap').append(ippo);
 	});
 	$('#lepisma').click(function() {
 		cleanCanvas();
 			$('#multi-wrap').css('visibility', 'visible');
+			$('#multi-wrap').append(imgX);
 			$('#multi-wrap').append(lepisma);
 	});
 	$('#pesce').click(function() {
 		cleanCanvas();
 			$('#multi-wrap').css('visibility', 'visible');
+			$('#multi-wrap').append(imgX);
 			$('#multi-wrap').append(pesce);
 	});
 
-
-		//$('#image-close').css('visibility', 'visible');
 		$('#image-close').click(function() {
+			$('#multi-wrap').empty();
 			$('#multi-wrap').css('visibility', 'hidden');
 		});
 

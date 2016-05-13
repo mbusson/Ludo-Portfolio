@@ -116,11 +116,12 @@ body {
     display: inline-block;
     position: absolute;
     top: -5px;
-    right: 5px;
+    right: 10px;
     color: #FFF8FA;
+    opacity: 0.5;
     font-size: 48px;
     cursor:pointer;
-    /*visibility: hidden;*/
+    z-index: 15;
 }
 h1 {
     color: #C6C6C6;
