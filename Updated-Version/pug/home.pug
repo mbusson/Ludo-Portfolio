@@ -1,27 +1,53 @@
+doctype html
 html
+  head
+    title
+    link(rel='shortcut icon', href='favicon.ico', type='image/x-icon')
+    link(rel='stylesheet', href='styles.css')
+    link(href='https://fonts.googleapis.com/css?family=Ubuntu', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='font-awesome/css/font-awesome.min.css')
   body
-    .js-component-foo
-    .js-component-bar
-      .js-component-bar-foo
-      .js-component-bar-foo
-      .js-component-bar-foo
-    .vertical-center
-      .vertical-el
-        p
-          strong Home caca
-          |  > 
-          a(href='/about') About caca
+    #loader-wrapper
+      #ribbon
+      #loader
+      .loader-section.section-left
+      .loader-section.section-right
+    #centerer
+      #polpo.box
+        img(src='images/polpo.jpg')
+      #medusa.box
+        img(src='images/medusa.jpg')
+      #sirena.box
+        img(src='images/sirena.jpg')
+    #centerer2
+      #ippo.box
+        img(src='images/ippocampo.jpg')
+      #lepisma.box
+        img(src='images/lepisma.jpg')
+      #pesce.box
+        img(src='images/pesce.jpg')
+      br
+    #home
+      a#toggle(href='#menu')
+        span
+      #menu
+        ul
+          li
+            a#contact(href='#')
+              i.fa.fa-envelope-o(aria-hidden='true')
+          li
+            a(href='../')
+              i.fa.fa-angle-double-left(aria-hidden='true')
+    #multi-wrap
+      a#image-close ×
+    #profile-wrap
+      a#contact-close ×
+      h1 Ludovica Schiariti
+      p
+        | Find me on 
+        a(href='https://www.facebook.com/profile.php?id=100011256067635') Facebook
+        | !
         br
-        p(style='color: #a9a9a9;') Duplicate sections caca
-        p
-          a(href='/section/one') Section 1 caca
-          |  > 
-          a(href='/section/two') Section 2 caca
-        br
-        p(style='color: #a9a9a9;') Sub sections
-        p
-          a(href='/gallery') Gallery
-        p
-          a(href='/gallery/one') Gallery 1
-          |  > 
-          a(href='/gallery/two') Gallery 2
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js')
+    script(src='style.js')
