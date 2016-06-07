@@ -128,7 +128,26 @@ Structure
     color: #ECECEC;
 }
 
-
+#contact-close {
+    display: inline-block;
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    color: #FFF8FA;
+    font-size: 48px;
+    cursor:pointer;
+}
+#image-close {
+    display: inline-block;
+    position: absolute;
+    top: -5px;
+    right: 10px;
+    color: #FFF8FA;
+    opacity: 0.5;
+    font-size: 48px;
+    cursor:pointer;
+    z-index: 15;
+}
 
 /* -----
 View
