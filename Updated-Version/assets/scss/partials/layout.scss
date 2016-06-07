@@ -173,6 +173,16 @@ Structure
     transition: opacity 0.5s;
 }
 
+.fa {
+    color: #7D7D7D;
+    opacity: 0.5;
+    font-size: 50%;
+}
+.fa:hover,
+.fa:focus {
+    color: white;
+}
+
 /* -----
 View
 ----- */
