@@ -89,6 +89,22 @@ Structure
     color: white;
 }
 
+#multi-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background: rgba(0,0,0,0.85);
+    z-index: 10;
+    visibility: hidden;
+}
+#multi-wrap img {
+    max-height: 95vh;
+    max-width: 95vw;
+}
+
 /* -----
 View
 ----- */
