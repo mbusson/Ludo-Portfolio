@@ -29,6 +29,25 @@ body {
 	}
 }
 
+/* ------
+Structure
+------ */
+
+#centerer,
+#centerer2 {
+    display: flex;
+    max-height: 50%;
+    align-items: center;
+    justify-content: center;
+}
+@-moz-document url-prefix() {
+    #centerer,
+    #centerer2 {
+        margin: 2% 0;
+    }
+}
+
+
 /* -----
 View
 ----- */
