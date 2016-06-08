@@ -18,10 +18,7 @@ class Preloader {
 	
 	init(req, done) {
 
-		setTimeout(function(){
-	        	$('body').addClass('loaded');
-	    	}, 1750);
-
+		classes.add(config.$body, 'is-loading')
         	
 		this.createDOM()
 
