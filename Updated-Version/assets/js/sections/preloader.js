@@ -3,6 +3,7 @@ import classes from 'dom-classes'
 import create from 'dom-create-element'
 import gsap from 'gsap'
 
+
 TweenLite.defaultEase = Expo.easeOut
 
 class Preloader {
@@ -18,7 +19,9 @@ class Preloader {
 	
 	init(req, done) {
 
-		classes.add(config.$body, 'is-loading')
+		setTimeout(function(){
+	        $('body').addClass('loaded');
+	    }, 1750);
         	
 		this.createDOM()
 
@@ -29,13 +32,20 @@ class Preloader {
 		
 		const page = this.view.firstChild
 
-		this.el = create({
+		/*this.el = create({
 			selector: 'div',
 			styles: 'preloader',
 			html: '<div class="vertical-center"><div class="vertical-el"><p>Preloader</p></div></div>'
-		})
+		})*/
 
-		this.view.insertBefore(this.el, page)
+		$(this.el).append('<div id="loader-wrapper">' +
+	    '<div id="loader"></div>' +
+	    '<div class="loader-section section-left"></div>' +
+	    '<div class="loader-section section-right"></div>' +
+		'</div>');
+
+
+		$(this).view.insertBefore(this.el, page)
 	}
 
 	resize(width, height) {
