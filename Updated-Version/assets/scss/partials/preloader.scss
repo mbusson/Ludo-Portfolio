@@ -1,13 +1,6 @@
 /* -----
 Preloader
 ----- */
-.preloader {
-	@include fixed();
-	text-align: center;
-	background: $white;
-}
-
-/* --- PRE-LOADER (cf. style.js)--- */
 
 #loader-wrapper {
     position: fixed;
@@ -23,7 +16,7 @@ Preloader
     position: relative;
     left: 50%;
     top: 50%;
-    background: url('images/logo2.png') no-repeat;
+    background: url('#{$base-images}/images/logo2.png') no-repeat;
     background-size: 50vh auto;
     height: 50vh;
     margin: -25vh 0 0 -25vh;
