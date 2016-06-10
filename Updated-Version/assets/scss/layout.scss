@@ -23,13 +23,7 @@ a, footer p a:hover {
 }
 
 body {
-  margin: 0 !important;
-  padding: 0 !important;
-  background: url('#{$base-images}/bg.jpg') repeat fixed center;
-  background-size: cover;
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
+  margin: 0;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
