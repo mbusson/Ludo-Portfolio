@@ -18,9 +18,7 @@ class Preloader {
 	
 	init(req, done) {
 
-		setTimeout(function(){
-	        $('body').addClass('loaded');
-	    }, 1750);
+        $('body').addClass('is-loading');
         	
 		this.createDOM()
 
@@ -66,7 +64,7 @@ class Preloader {
 
 	destroy(req, done) {
 
-		classes.add(config.$body, 'is-loaded')
+		classes.add(config.$body, 'loaded')
 		classes.remove(config.$body, 'is-loading')
 
 		this.view.removeChild(this.el)
