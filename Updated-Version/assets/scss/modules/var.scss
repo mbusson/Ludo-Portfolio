@@ -15,6 +15,15 @@ $none: rgba(0,0,0,0);
 $base: $grey-light;
 
 /* -----
+Calculations
+----- */
+$pageHeight: 100vh;
+$pageWidth: 100vw;
+$imgWidth: 12px;
+$imgHeight: 12px;
+
+
+/* -----
 Font Family
 ----- */
 $helvetica: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
