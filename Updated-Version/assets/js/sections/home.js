@@ -2,6 +2,7 @@ import config from 'config'
 import utils from 'utils'
 import classes from 'dom-classes'
 import Default from './default'
+import event from 'dom-event'
 import {on, off} from 'dom-event'
 
 class Home extends Default {
@@ -23,7 +24,7 @@ class Home extends Default {
 
 		super.dataAdded()
   
-		on(this.ui.wrap, 'click', this.handleClick)
+		on(this.ui.wrap[0], 'click', this.handleClick)
     
 		done()
 	}
