@@ -2,6 +2,7 @@ import config from 'config'
 import utils from 'utils'
 import classes from 'dom-classes'
 import Default from './default'
+import {on, off} from 'dom-event'
 
 class Home extends Default {
 	
@@ -21,8 +22,18 @@ class Home extends Default {
 	dataAdded(done) {
 
 		super.dataAdded()
-
+  
+		on(this.ui.wrap, 'click', this.handleClick)
+    
 		done()
+	}
+	
+	handleClick(e) {
+	  
+		const target = e.currentTarget
+	  
+		target.style.visibility = 'hidden'
+		target.innerHTML = ''
 	}
 
 	animateIn(req, done) {
