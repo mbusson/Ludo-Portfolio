@@ -13,6 +13,8 @@ class Home extends Default {
 
 		this.slug = 'home'
 		this.ui = null
+
+		this.handlePrint = this.handlePrint.bind(this)
 	}
 	
 	init(req, done) {
@@ -24,17 +26,70 @@ class Home extends Default {
 
 		super.dataAdded()
   
-		on(this.ui.wrap[0], 'click', this.handleClick)
-    
+		on(this.ui.wrap, 'click', this.handleClick)
+
 		done()
+	}
+
+	addEvents() {
+		this.boxes = utils.js.arrayFrom(this.ui.box)
+
+		// t'as un array a partir d'une nodeList
+		console.log(this.boxes)
+
+		this.boxes.forEach((box) => on(box, 'click', this.handlePrint))
+	}
+
+	removeEvents() {
+		this.boxes.forEach((box) => off(box, 'click', this.handlePrint))
+
+		this.boxes = null
 	}
 	
 	handleClick(e) {
 	  
 		const target = e.currentTarget
 	  
+	  	target.innerHTML = null;
 		target.style.visibility = 'hidden'
 		target.innerHTML = ''
+	}
+	
+	handlePrint(e) {
+
+		const target = e.currentTarget
+
+		var polpo = '<img src="images/polpo-full.jpg">',
+			medusa = '<img src="images/medusa-full.jpg">',
+			sirena = '<img src="images/sirena-full.jpg">',
+			ippo = '<img src="images/ippocampo-full.jpg">',
+			lepisma = '<img src="images/lepisma-full.jpg">',
+			pesce = '<img src="images/pesce-full.jpg">',
+			imgX = '<a id="image-close">&times;</a>';
+		var polpoId = this.ui.polpo, 
+			medusaId = this.ui.medusa, 
+			sirenaId = this.ui.sirena, 
+			ippoId = this.ui.ippo, 
+			lepismaId = this.ui.lepisma, 
+			pesceId = this.ui.pesce;
+
+		var multiWrap = this.ui.wrap;
+		multiWrap.style.visibility = 'visible';
+	  
+	  	if (target == polpoId) {
+	  		target.innerhtml = polpo;
+	  	} else if (target == medusaId) {
+	  		target.innerhtml = medusa;
+	  	} else if (target == sirenaId) {
+	  		target.innerhtml = sirena;
+	  	} else if (target == ippoId) {
+	  		target.innerhtml = ippo;
+	  	} else if (target == lepismaId) {
+	  		target.innerhtml = lepisma;
+	  	} else {
+	  		target.innerhtml = pesce;
+	  	}
+	  	console.log(target);
 	}
 
 	animateIn(req, done) {
