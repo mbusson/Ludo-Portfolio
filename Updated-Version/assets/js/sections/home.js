@@ -28,6 +28,8 @@ class Home extends Default {
   
 		on(this.ui.wrap, 'click', this.handleClick)
 
+		this.addEvents()
+
 		done()
 	}
 
@@ -54,7 +56,7 @@ class Home extends Default {
 		target.style.visibility = 'hidden'
 		target.innerHTML = ''
 	}
-	
+
 	handlePrint(e) {
 
 		const target = e.currentTarget
@@ -119,6 +121,8 @@ class Home extends Default {
 	destroy(req, done) {
 
 		super.destroy()
+
+		this.removeEvents()
 
 		this.ui = null
 
