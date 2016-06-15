@@ -36,9 +36,6 @@ class Home extends Default {
 	addEvents() {
 		this.boxes = utils.js.arrayFrom(this.ui.box)
 
-		// t'as un array a partir d'une nodeList
-		console.log(this.boxes)
-
 		this.boxes.forEach((box) => on(box, 'click', this.handlePrint))
 	}
 
@@ -51,47 +48,54 @@ class Home extends Default {
 	handleClick(e) {
 	  
 		const target = e.currentTarget
-	  
-	  	target.innerHTML = null;
-		target.style.visibility = 'hidden'
-		target.innerHTML = ''
+
+	  	TweenLite.to(target, 0.5, {autoAlpha:0, ease: Power2.easeIn});
 	}
 
 	handlePrint(e) {
 
 		const target = e.currentTarget
 
-		var polpo = '<img src="images/polpo-full.jpg">',
-			medusa = '<img src="images/medusa-full.jpg">',
-			sirena = '<img src="images/sirena-full.jpg">',
-			ippo = '<img src="images/ippocampo-full.jpg">',
-			lepisma = '<img src="images/lepisma-full.jpg">',
-			pesce = '<img src="images/pesce-full.jpg">',
+		var polpo = '<img src="/assets/images/polpo-full.jpg">',
+			medusa = '<img src="/assets/images/medusa-full.jpg">',
+			sirena = '<img src="/assets/images/sirena-full.jpg">',
+			ippo = '<img src="/assets/images/ippocampo-full.jpg">',
+			lepisma = '<img src="/assets/images/lepisma-full.jpg">',
+			pesce = '<img src="/assets/images/pesce-full.jpg">',
 			imgX = '<a id="image-close">&times;</a>';
+			// assigned images to variables
 		var polpoId = this.ui.polpo, 
 			medusaId = this.ui.medusa, 
 			sirenaId = this.ui.sirena, 
 			ippoId = this.ui.ippo, 
 			lepismaId = this.ui.lepisma, 
 			pesceId = this.ui.pesce;
+			// assigned divs to variables
 
-		var multiWrap = this.ui.wrap;
-		multiWrap.style.visibility = 'visible';
+		var multiWrap = this.ui.wrap,
+			closeBox = this.ui.close,
+			wrapContent;
 	  
 	  	if (target == polpoId) {
-	  		target.innerhtml = polpo;
+	  		wrapContent = polpo;
 	  	} else if (target == medusaId) {
-	  		target.innerhtml = medusa;
+	  		wrapContent = medusa;
 	  	} else if (target == sirenaId) {
-	  		target.innerhtml = sirena;
+	  		wrapContent = sirena;
 	  	} else if (target == ippoId) {
-	  		target.innerhtml = ippo;
+	  		wrapContent = ippo;
 	  	} else if (target == lepismaId) {
-	  		target.innerhtml = lepisma;
+	  		wrapContent = lepisma;
 	  	} else {
-	  		target.innerhtml = pesce;
+	  		wrapContent = pesce;
 	  	}
-	  	console.log(target);
+
+	  	console.log(closeBox);
+
+	  	multiWrap.innerHTML = wrapContent;
+	  	TweenLite.to(multiWrap, 2, {autoAlpha:1, ease: Power4.easeOut});
+	  	TweenLite.from(closeBox, 3, {opacity: 0.5});
+	  	
 	}
 
 	animateIn(req, done) {
