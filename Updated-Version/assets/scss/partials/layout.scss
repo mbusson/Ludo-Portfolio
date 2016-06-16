@@ -62,30 +62,6 @@ Utils
 /* -----
 Elements
 ----- */
-#flex-display {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center
-}
-#centerer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    max-height: 80%;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-}
-@-moz-document url-prefix() {
-    #centerer,
-    #centerer2 {
-        margin: 2% 0;
-    }
-}
-
 .box {
     position: relative;
     display: inline-block;
