@@ -92,7 +92,8 @@ class Home extends Default {
 
 	  	console.log(closeBox);
 
-	  	multiWrap.innerHTML = wrapContent;
+	  	multiWrap.innerHTML = '<a class="js-close" id="image-close">×</a>';
+	  	multiWrap.innerHTML += wrapContent;
 	  	TweenLite.to(multiWrap, 2, {autoAlpha:1, ease: Power4.easeOut});
 	  	TweenLite.from(closeBox, 3, {opacity: 0.5});
 	  	
