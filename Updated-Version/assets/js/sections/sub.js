@@ -26,7 +26,7 @@ class Sub {
         
         const template = `
             <div class="vertical-center">
-                <div class="closure"> > </div>
+                <div class="closure"><span class="closure-content"> > </span></div>
                 <div class="vertical-el">
                     <span>${id} me...</span>
                 </div>
