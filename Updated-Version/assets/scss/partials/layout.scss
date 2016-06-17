@@ -138,6 +138,18 @@ Elements
     z-index: 50;
 }
 
+#menu {
+    position: absolute;
+    padding: 5px;
+    top: 15px;
+    left: 15px;
+    text-align: center;
+}
+#menu-icon {
+    font-size: $px32;
+    color: white;
+}
+
 /* -----
 Page
 ----- */
