@@ -484,8 +484,11 @@ p {
   height: 100%;
   width: 40%;
   text-align: center;
+  background-color: rgba(0,0,0,0.5);
+}
+.closure-content {
+  color: white;
   vertical-align: middle;
-  background-color: yellow;
 }
 
 .preloader, .sub-item, footer {
