@@ -477,17 +477,17 @@ p {
   position: relative;
   width: 100%;
   height: 100%;
-  background: rgba(100,100,100,0.9);
+  background: rgba(20,20,20,0.9);
 }
 
 .closure {
   height: 100%;
   width: 40%;
-  text-align: center;
-  background-color: rgba(0,0,0,0.5);
-}
-.closure-content {
   color: white;
+  background-color: rgba(50,50,50,0.2);
+}
+.closure .closure-el {
+  display: table-cell;
   vertical-align: middle;
 }
 
