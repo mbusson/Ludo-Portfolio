@@ -482,11 +482,15 @@ p {
 
 .closure {
   height: 100%;
+  position: relative;
   width: 40%;
   color: white;
   background-color: rgba(50,50,50,0.2);
 }
 .closure .closure-el {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   display: table-cell;
   vertical-align: middle;
 }
