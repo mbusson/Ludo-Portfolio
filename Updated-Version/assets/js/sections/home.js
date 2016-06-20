@@ -49,7 +49,7 @@ class Home extends Default {
 	  
 		const target = e.currentTarget
 
-	  	TweenLite.to(target, 0.5, {autoAlpha:0, ease: Power2.easeIn});
+	  	TweenLite.to(target, 0.5, {autoAlpha:0, y: '-150%', ease: Power2.easeIn});
 	}
 
 	handlePrint(e) {
@@ -94,8 +94,8 @@ class Home extends Default {
 
 	  	multiWrap.innerHTML = '<a class="js-close" id="image-close">×</a>';
 	  	multiWrap.innerHTML += wrapContent;
-	  	TweenLite.to(multiWrap, 2, {autoAlpha:1, ease: Power4.easeOut});
-	  	TweenLite.from(closeBox, 3, {opacity: 0.5});
+	  	TweenLite.to(multiWrap, 1, {autoAlpha:1, y: '-50%', ease: Power4.easeOut});
+	  	TweenLite.from(closeBox, 2, {opacity: 0.5});
 	  	
 	}
 
