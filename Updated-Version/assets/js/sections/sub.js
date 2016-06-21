@@ -26,11 +26,11 @@ class Sub {
         
         const template = `
             <div class="vertical-center">
-                <div class="closure"> 
-                    <span class="closure-el"> <i class="fa fa-angle-right" aria-hidden="true"></i> </span>
-                </div>
                 <div class="vertical-el">
                     <span>${id} me...</span>
+                </div>
+                <div class="closure"> 
+                    <span class="closure-el"> × </span>
                 </div>
             </div>
         `
