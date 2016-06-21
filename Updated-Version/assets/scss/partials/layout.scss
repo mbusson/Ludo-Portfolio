@@ -484,14 +484,16 @@ p {
   min-height: 100%;
   position: relative;
   min-width: 48px;
-  color: white;
 }
 .closure .closure-el {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: $px32;
+  right: 5%;
   display: table-cell;
+}
+.js-closeabout {
+  text-decoration: none;
+  color: white;
+  font-size: $px32;
 }
 
 .preloader, .sub-item, footer {
@@ -519,8 +521,8 @@ p {
   height: 100%;
   top: 0;
   background: rgba(0, 0, 0, 0.1);
-  -webkit-transform: translate3d(100%, 0, 0);
-  transform: translate3d(100%, 0, 0);
+  -webkit-transform: translate3d(-320, 0, 0);
+  transform: translate3d(-320, 0, 0);
 }
 
 @media (max-width: 768px) {
