@@ -484,16 +484,14 @@ p {
   min-height: 100%;
   position: relative;
   min-width: 48px;
-  width: 40%;
   color: white;
-  background-color: rgba(50,50,50,0.2);
 }
 .closure .closure-el {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  font-size: $px32;
   display: table-cell;
-  vertical-align: middle;
 }
 
 .preloader, .sub-item, footer {
