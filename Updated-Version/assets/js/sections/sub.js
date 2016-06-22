@@ -55,7 +55,7 @@ class Sub {
         this.el.style.display = 'block'
 
         const tl = new TimelineMax({ paused: true })
-        tl.to(this.el, 1, { x: 0, ease: Expo.easeInOut });
+        tl.fromTo(this.el, 1,{x: '-320'}, { x: 0, ease: Expo.easeInOut })
         tl.restart()
         
         done()
