@@ -30,7 +30,7 @@ class Sub {
                     <span>${id} me...</span>
                 </div>
                 <div class="closure"> 
-                    <span class="closure-el"> <a href="/home" class="js-closeabout">×</a> </span>
+                    <span class="closure-el"> <a href="/home" class="js-closeabout link">×</a> </span>
                 </div>
             </div>
         `
