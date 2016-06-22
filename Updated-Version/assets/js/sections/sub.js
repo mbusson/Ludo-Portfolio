@@ -30,7 +30,7 @@ class Sub {
                     <span>${id} me...</span>
                 </div>
                 <div class="closure"> 
-                    <span class="closure-el"> × </span>
+                    <span class="closure-el"> <a href="#" class="js-closeabout">×</a> </span>
                 </div>
             </div>
         `
@@ -42,6 +42,8 @@ class Sub {
         })
 
         this.view.appendChild(this.el)
+        
+        utils.biggie. addRoutingEL(document.querySelectorAll('.link'))
         
         done()
     }
@@ -64,7 +66,7 @@ class Sub {
         classes.remove(config.$body, `is-${this.slug}`)
 
         const tl = new TimelineMax({ paused: true, onComplete: done })
-        this.el && tl.to(this.el, 0.7, { x: '100%', ease: Expo.easeInOut, clearProps: 'all' })
+        this.el && tl.to(this.el, 0.7, { x: '-320', ease: Expo.easeInOut, clearProps: 'all' })
         tl.restart()
     }
     
