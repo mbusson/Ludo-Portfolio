@@ -30,7 +30,7 @@ class Sub {
                     <span>${id} me...</span>
                 </div>
                 <div class="closure"> 
-                    <span class="closure-el"> <a href="#" class="js-closeabout">×</a> </span>
+                    <span class="closure-el"> <a href="/home" class="js-closeabout">×</a> </span>
                 </div>
             </div>
         `
@@ -44,7 +44,7 @@ class Sub {
         this.view.appendChild(this.el)
         
         utils.biggie. addRoutingEL(document.querySelectorAll('.link'))
-        
+
         done()
     }
     
