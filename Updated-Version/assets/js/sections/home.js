@@ -90,7 +90,7 @@ class Home extends Default {
 	  		wrapContent = pesce;
 	  	}
 
-	  	// Just making sure multiWrap is properly positionned
+	  	// Just making sure multiWrap is properly positioned
 	  	TweenLite.to(multiWrap, 0.1, {y: '-50%', x: '-150%', ease: Power0.easeNone});
 
 	  	multiWrap.innerHTML = '<a class="js-close" id="image-close">×</a>';
