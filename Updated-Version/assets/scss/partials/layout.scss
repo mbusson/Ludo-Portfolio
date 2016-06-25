@@ -483,7 +483,7 @@ p {
 .closure {
   min-height: 100%;
   position: relative;
-  min-width: 48px;
+  min-width: 32px;
 }
 .closure .closure-el {
   position: absolute;
@@ -498,6 +498,10 @@ p {
 ul li {
   display: inline-block;
   vertical-align: middle;
+  width: 85%;
+  margin-left: $px24;
+  padding: $px5;
+  font-size: $px18;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -505,11 +509,14 @@ ul li {
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  background: #e1e1e1;
+  background: rgba(50, 50, 50, 50.5);
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
+}
+ul li a {
+  color: white;
 }
 ul li:before {
   content: "";
