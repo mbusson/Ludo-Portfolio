@@ -549,6 +549,11 @@ ul li:hover:before, ul li:focus:before, ul li:active:before {
   transform: scaleX(1);
 }
 
+.info {
+  color: white;
+  margin-left: $px32;
+}
+
 .preloader, .sub-item, footer {
   position: fixed;
   left: 0;
