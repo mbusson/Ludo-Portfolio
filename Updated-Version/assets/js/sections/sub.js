@@ -27,18 +27,16 @@ class Sub {
         const template = `
             <div class="vertical-center">
                 <div class="vertical-el">
-                    <span>${id} me...</span> <br>
+                    <span class="info">${id} me...</span> <br>
                     <ul>
                         <li>Profile</li>
                         <li>Facebook</li>
                         <li>Experience</li>
                     </ul> <br>
                     <ul>
-                        <li><< Back</li>
-                        <ul>
-                            <li style='font-size: 0.75rem'>To the Developer's Website</li>
-                        </ul>
+                        <li><a href="http://mbusson.com"><< Back</a></li>                        
                     </ul>
+                    <span style="font-size: 0.75rem" class="info"> To the developer's website. </span>
                 </div>
                 <div class="closure"> 
                     <span class="closure-el"> <a href="/home" class="js-closeabout link">×</a> </span>
