@@ -515,7 +515,7 @@ ul li {
   transition-duration: 0.3s;
 }
 
-ul li a {
+ul li a, ul li a:hover, ul li a:focus, ul li a:active {
   text-decoration: none;
   color: inherit;
 }
