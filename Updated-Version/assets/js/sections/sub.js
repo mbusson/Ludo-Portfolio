@@ -27,7 +27,7 @@ class Sub {
         const template = `
             <div class="vertical-center">
                 <div class="vertical-el">
-                    <span class="info">${id} me...</span> <br>
+                    <span class="info">${id} me...</span> <br><br>
                     <ul>
                         <li>Profile</li>
                         <li><a href="https://www.facebook.com/profile.php?id=100011256067635">Facebook</a></li>
