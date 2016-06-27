@@ -508,7 +508,7 @@ ul li {
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  background: rgba(150, 150, 150, 0.5);
+  background: rgba(50, 50, 50, 0.5);
   -webkit-transition-property: color;
   transition-property: color;
   -webkit-transition-duration: 0.3s;
@@ -528,7 +528,7 @@ ul li:before {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(25, 25, 25, 0.8);
+  background: rgba(100, 100, 100, 0.5);
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 50%;
