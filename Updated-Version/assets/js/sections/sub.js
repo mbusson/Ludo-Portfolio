@@ -29,9 +29,9 @@ class Sub {
                 <div class="vertical-el">
                     <span class="info">${id} me...</span> <br><br>
                     <ul>
-                        <li>Profile</li>
+                        <li class="js-profile">Profile</li>
                         <li><a href="https://www.facebook.com/profile.php?id=100011256067635">Facebook</a></li>
-                        <li>Experience</li>
+                        <li class="js-experience">Experience</li>
                     </ul> <br>
                     <ul>
                         <li><a href="http://mbusson.com"><< Back</a></li>                        
