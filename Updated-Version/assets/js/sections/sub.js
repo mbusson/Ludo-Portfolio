@@ -5,6 +5,8 @@ import $ from 'dom-select'
 import classes from 'dom-classes';
 import create from 'dom-create-element'
 import query from 'query-dom-components'
+import event from 'dom-event'
+import {on, off} from 'dom-event'
 
 class Sub {
     
@@ -55,6 +57,27 @@ class Sub {
         utils.biggie. addRoutingEL(document.querySelectorAll('.link'))
 
         done()
+    }
+
+    dataAdded(done) {
+        super.dataAdded()
+
+        on(this.ui.profile, 'click', this.handleMenu)
+        console.log('click')
+        on(this.ui.experience, 'click', this.handleMenu)
+        console.log('click')
+
+        this.addEvents()
+
+        done()
+    }
+
+    handleMenu(e) {
+      
+        console.log('handleMenu')
+        const target = e.currentTarget
+
+        console.log(target)
     }
     
     animateIn(req, done) {
