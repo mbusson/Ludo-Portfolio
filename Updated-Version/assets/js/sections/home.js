@@ -27,8 +27,6 @@ class Home extends Default {
 		super.dataAdded()
   
 		on(this.ui.wrap, 'click', this.handleClick)
-		/*on(this.ui.profile, 'click', this.handleMenu)
-		on(this.ui.experience, 'click', this.handleMenu)*/
 
 		this.addEvents()
 
@@ -53,13 +51,6 @@ class Home extends Default {
 
 	  	TweenLite.to(target, 0.5, {autoAlpha:0, y: '-150%', x: '-50%', ease: Power2.easeIn});
 	}
-
-	/*handleMenu(e) {
-	  
-		const target = e.currentTarget
-
-		console.log(target)
-	}*/
 
 	handlePrint(e) {
 
