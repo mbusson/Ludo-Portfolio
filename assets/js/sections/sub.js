@@ -54,6 +54,7 @@ class Sub {
         })
 
         this.view.appendChild(this.el)
+        this.ui = query({ el: this.el }) //added
         
         utils.biggie. addRoutingEL(document.querySelectorAll('.link'))
 
