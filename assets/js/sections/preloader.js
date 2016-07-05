@@ -1,0 +1,76 @@
+import config from 'config'
+import classes from 'dom-classes'
+import create from 'dom-create-element'
+
+
+TweenLite.defaultEase = Expo.easeOut
+
+class Preloader {
+	
+	constructor(onComplete) {
+		
+		this.preloaded = onComplete
+		this.view = config.$view
+		this.el = null
+
+		this.isMobile = config.isMobile = config.width <= 1024 ? true : false
+	}
+	
+	init(req, done) {
+
+        $('body').addClass('is-loading');
+        	
+		this.createDOM()
+
+		done()
+	}
+	
+	createDOM() {
+		
+		const page = this.view.firstChild
+
+		this.el = create({
+			selector: 'div',
+			styles: 'preloader',
+			html: '<div id="loader-wrapper"><div id="loader"></div><div class="loader-section section-left"></div><div class="loader-section section-right"></div></div>'
+		})
+
+		this.view.insertBefore(this.el, page)
+	}
+
+	resize(width, height) {
+
+		config.width = width
+		config.height = height
+	}
+
+	animateIn(req, done) {
+
+		const tl = new TimelineMax({ paused: true, onComplete: () => {
+			done()
+			// call this.preloaded to bring the first route
+			this.preloaded()
+		}});
+		tl.to(this.el, 1, {autoAlpha: 1})
+		tl.restart()
+	}
+	
+	animateOut(req, done) {
+
+		const tl = new TimelineMax({ paused: true, onComplete: done })
+		tl.to(this.el, 1, {autoAlpha: 0})
+		tl.restart()
+	}
+
+	destroy(req, done) {
+
+		classes.add(config.$body, 'loaded')
+		classes.remove(config.$body, 'is-loading')
+
+		this.view.removeChild(this.el)
+
+		done()
+	}
+}
+
+module.exports = Preloader
