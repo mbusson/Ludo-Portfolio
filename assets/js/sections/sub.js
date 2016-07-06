@@ -3,7 +3,6 @@ import config from 'config'
 import utils from 'utils'
 import $ from 'dom-select'
 import classes from 'dom-classes';
-import Default from './default'
 import create from 'dom-create-element'
 import query from 'query-dom-components'
 import event from 'dom-event'
@@ -55,6 +54,7 @@ class Sub {
 
         this.view.appendChild(this.el)
         this.ui = query({ el: this.el }) //added
+        this.dataAdded()
         
         utils.biggie. addRoutingEL(document.querySelectorAll('.link'))
 
@@ -62,19 +62,13 @@ class Sub {
     }
 
     dataAdded(done) {
-        super.dataAdded()
-
-        on(this.ui.profile, 'click', this.handleMenu)
+        on(this.ui.profile,'click', this.handleMenu)
         on(this.ui.experience, 'click', this.handleMenu)
-
-        this.addEvents()
-
-        done()
     }
 
     handleMenu(e) {
       
-        console.log('handleMenu')
+        console.log('Here we go')
         const target = e.currentTarget
 
         console.log(target)
