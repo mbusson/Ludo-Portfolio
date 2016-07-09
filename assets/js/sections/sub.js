@@ -74,13 +74,13 @@ class Sub {
 
         if ( classes.has(target, 'js-profile') ) {
 
-            console.log(document.getElementById('menu-wrap'))
+            console.log('clic profil')
             //TweenLite.to(profile, 0.5, {autoAlpha:1, y: '-150%', x: '-50%', ease: Power2.easeIn});
 
         } else if ( classes.has(target, 'js-experience') ) {
 
-            console.log(document.getElementById('menu-wrap'))
-            //TweenLite.to(profile, 0.5, {autoAlpha:1, y: '-150%', x: '-50%', ease: Power2.easeIn});
+            console.log('clic experience')
+            //TweenLite.to(experience, 0.5, {autoAlpha:1, y: '-150%', x: '-50%', ease: Power2.easeIn});
 
         }
 
