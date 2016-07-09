@@ -68,20 +68,22 @@ class Sub {
 
     handleMenu(e) {
       
-        console.log('Here we go')
         const target = e.currentTarget
         const profile = document.getElementById('menu-wrap')
         const experience = document.getElementById('menu-wrap')
 
         if ( classes.has(target, 'js-profile') ) {
 
-            console.log(target)
+            console.log(document.getElementById('menu-wrap'))
+            //TweenLite.to(profile, 0.5, {autoAlpha:1, y: '-150%', x: '-50%', ease: Power2.easeIn});
+
+        } else if ( classes.has(target, 'js-experience') ) {
+
             console.log(document.getElementById('menu-wrap'))
             //TweenLite.to(profile, 0.5, {autoAlpha:1, y: '-150%', x: '-50%', ease: Power2.easeIn});
 
         }
 
-        console.log(target)
     }
     
     animateIn(req, done) {
