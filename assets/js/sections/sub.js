@@ -69,17 +69,19 @@ class Sub {
     handleMenu(e) {
       
         const target = e.currentTarget
-        const profile = document.getElementById('menu-wrap')
-        const experience = document.getElementById('menu-wrap')
 
         if ( classes.has(target, 'js-profile') ) {
 
             console.log('clic profil')
+            const profile = $('#menu-wrap')
+            console.log(profile)
             //TweenLite.to(profile, 0.5, {autoAlpha:1, y: '-150%', x: '-50%', ease: Power2.easeIn});
 
         } else if ( classes.has(target, 'js-experience') ) {
 
             console.log('clic experience')
+            const experience = $('#menu-wrap')
+            console.log(experience)
             //TweenLite.to(experience, 0.5, {autoAlpha:1, y: '-150%', x: '-50%', ease: Power2.easeIn});
 
         }
