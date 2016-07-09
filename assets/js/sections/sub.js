@@ -70,7 +70,12 @@ class Sub {
       
         const target = e.currentTarget
 
-        const container = `
+        const profileContent = `
+            <div class="js-menuwrap">
+                <a class="js-close" id="image-close">×</a>
+            </div>
+        `
+        const expContent = `
             <div class="js-menuwrap">
                 <a class="js-close" id="image-close">×</a>
             </div>
@@ -82,22 +87,33 @@ class Sub {
             const profile = create({
               selector: 'div',
               id: 'menu-wrap',
-              styles: '`is-container`',
-              html: container
+              styles: '`is-profile-content`',
+              html: profileContent
             });
             document.body.appendChild(profile)
-            TweenLite.to(profile, 1, {
-                autoAlpha:1, 
-                x: '-50%', 
-                ease: Power2.easeIn
+            TweenLite.from(profile, 1, {
+                autoAlpha:0, 
+                x: '500%', 
+                ease: Expo.easeInOut,
+                y: 0
             });
 
         } else if ( classes.has(target, 'js-experience') ) {
 
             console.log('clic experience')
-            const experience = $('#menu-wrap')
-            console.log(experience)
-            //TweenLite.to(experience, 0.5, {autoAlpha:1, y: '-150%', x: '-50%', ease: Power2.easeIn});
+            const experience = create({
+              selector: 'div',
+              id: 'menu-wrap',
+              styles: '`is-exp-content`',
+              html: expContent
+            });
+            document.body.appendChild(experience)
+            TweenLite.from(experience, 1, {
+                autoAlpha:0, 
+                x: '500%', 
+                ease: Expo.easeInOut,
+                y: 0
+            });
 
         }
 
