@@ -125,6 +125,18 @@ Elements
     max-width: 95vw;
 }
 
+#menu-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -150%);
+    padding: 25px;
+    background: rgba(20,20,20,0.9);
+    z-index: 10;
+    visibility: hidden;
+}
+
 #image-close {
     display: inline-block;
     text-decoration: none;
