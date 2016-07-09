@@ -86,7 +86,11 @@ class Sub {
               html: container
             });
             document.body.appendChild(profile)
-            TweenLite.to(profile, 1, {autoAlpha:1, ease: Power2.easeIn});
+            TweenLite.to(profile, 1, {
+                autoAlpha:1, 
+                x: '-50%', 
+                ease: Power2.easeIn
+            });
 
         } else if ( classes.has(target, 'js-experience') ) {
 
