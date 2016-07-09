@@ -70,12 +70,18 @@ class Sub {
       
         const target = e.currentTarget
 
+        const container = `
+            <div class="js-menuwrap" id="menu-wrap">
+                <a class="js-close" id="image-close">×</a>
+            </div>
+        `
+
         if ( classes.has(target, 'js-profile') ) {
 
             console.log('clic profil')
-            const profile = $('#menu-wrap')
+            const profile = window.$('#menu-wrap')
             console.log(profile)
-            //TweenLite.to(profile, 0.5, {autoAlpha:1, y: '-150%', x: '-50%', ease: Power2.easeIn});
+            TweenLite.to(profile, 1, {autoAlpha:1, ease: Power2.easeIn});
 
         } else if ( classes.has(target, 'js-experience') ) {
 
