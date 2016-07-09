@@ -53,7 +53,7 @@ class Sub {
         })
 
         this.view.appendChild(this.el)
-        this.ui = query({ el: this.el }) //added
+        this.ui = query({ el: this.el })
         this.dataAdded()
         
         utils.biggie. addRoutingEL(document.querySelectorAll('.link'))
@@ -71,7 +71,7 @@ class Sub {
         const target = e.currentTarget
 
         const container = `
-            <div class="js-menuwrap" id="menu-wrap">
+            <div class="js-menuwrap">
                 <a class="js-close" id="image-close">×</a>
             </div>
         `
@@ -79,8 +79,13 @@ class Sub {
         if ( classes.has(target, 'js-profile') ) {
 
             console.log('clic profil')
-            const profile = window.$('#menu-wrap')
-            console.log(profile)
+            const profile = create({
+              selector: 'div',
+              id: 'menu-wrap',
+              styles: '`is-container`',
+              html: container
+            });
+            document.body.appendChild(profile)
             TweenLite.to(profile, 1, {autoAlpha:1, ease: Power2.easeIn});
 
         } else if ( classes.has(target, 'js-experience') ) {
