@@ -127,9 +127,11 @@ Elements
 
 #menu-wrap {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
+    top: 10%;
+    left: 30%;
+    max-height: 80%;
+    max-width: 65%;
+    margin-right: -45%;
     padding: 45px;
     background: rgba(20,20,20,0.9);
     z-index: 10;
