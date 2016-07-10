@@ -4,6 +4,5 @@ Static portfolio for artist Luvy Jones using [SassyPug](https://github.com/mbuss
 
 ### To Do
 
-- [ ] Profile page + deployment (gsap - slide in from the right)
-- [ ] Experience page + deployment
+- [ ] Profile & experience pages + animateOut & no multiple pages
 - [ ] Preloader (make it animate in and out in a better fashion)
