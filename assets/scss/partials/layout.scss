@@ -129,12 +129,13 @@ Elements
     position: absolute;
     top: 10%;
     left: 30%;
-    max-height: 80%;
-    max-width: 65%;
+    height: 80%;
+    width: 65%;
     margin-right: -45%;
     padding: 45px;
     background: rgba(20,20,20,0.9);
     z-index: 10;
+    overflow: hidden;
     visibility: hidden;
 }
 
