@@ -152,6 +152,11 @@ class Sub {
                 if (document.getElementById('profile-exists')) {
                     const profileOut = document.getElementById('menu-wrap')
                     document.body.appendChild(experience)
+                    function removeProfileMenu() {
+                        console.log(profileOut)
+                        document.body.removeChild(profileOut)
+                        console.log(profileOut)
+                    }
                     let tl = new TimelineLite()
                     tl.to(profileOut, 1, {
                         autoAlpha:0, 
@@ -165,9 +170,7 @@ class Sub {
                         ease: Expo.easeInOut,
                         y: 0
                     });
-                    console.log(profileOut)
-                    document.body.removeChild(profileOut)
-                    console.log(profileOut)
+                    tl.addPause(1.5, removeProfileMenu);
                 }
             } else {
                 document.body.appendChild(experience)
