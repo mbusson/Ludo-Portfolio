@@ -107,8 +107,13 @@ class Sub {
                 if (document.getElementById('exp-exists')) {
                     const expOut = document.getElementById('menu-wrap')
                     document.body.appendChild(profile)
+                    function removeExpMenu() {
+                        console.log(expOut)
+                        document.body.removeChild(expOut)
+                        console.log(expOut)
+                    }
                     let tl = new TimelineLite()
-                    tl.to(expOut, 1, {
+                    tl.to(expOut, 0.5, {
                         autoAlpha:0, 
                         x: '500%', 
                         ease: Expo.easeInOut,
@@ -120,9 +125,8 @@ class Sub {
                         ease: Expo.easeInOut,
                         y: 0
                     });
-                    console.log(expOut)
-                    document.body.removeChild(expOut)
-                    console.log(expOut)
+                    tl.addPause(1.5, removeExpMenu);
+                    
                 }
             } else {
                 document.body.appendChild(profile)
