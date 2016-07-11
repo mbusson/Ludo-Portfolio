@@ -61,8 +61,7 @@ class Home extends Default {
 			sirena = '<img src="/assets/images/sirena-full.jpg">',
 			ippo = '<img src="/assets/images/ippocampo-full.jpg">',
 			lepisma = '<img src="/assets/images/lepisma-full.jpg">',
-			pesce = '<img src="/assets/images/pesce-full.jpg">',
-			imgX = '<a id="image-close">&times;</a>';
+			pesce = '<img src="/assets/images/pesce-full.jpg">'
 			// assigned images to variables
 		var polpoId = this.ui.polpo, 
 			medusaId = this.ui.medusa, 
