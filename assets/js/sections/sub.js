@@ -92,6 +92,7 @@ class Sub {
             </div>
         `
 
+
         if ( classes.has(target, 'js-profile') ) {
 
             console.log('clic profil')
@@ -101,6 +102,21 @@ class Sub {
               styles: '`is-profile-content`',
               html: profileContent
             });
+
+            if (profile) {
+                TweenLite.fromTo(profile, 1, 
+                    {
+                        autoAlpha:1, 
+                        
+                    }, {
+                        autoAlpha:0, 
+                        x: '500%'                        
+                    },
+                ease: Expo.easeInOut,
+                y: 0
+                });
+            }
+
             document.body.appendChild(profile)
             TweenLite.from(profile, 1, {
                 autoAlpha:0, 
