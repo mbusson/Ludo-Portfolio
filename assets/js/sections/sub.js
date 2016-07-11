@@ -71,7 +71,7 @@ class Sub {
         const target = e.currentTarget
 
         const profileContent = `
-            <div class="js-menuwrap">
+            <div class="js-profile" id="profile-exists">
                 <a class="js-close" id="image-close">×</a>
                 <br>
                 <p>Nunc scelerisque viverra tincidunt. Mauris sodales nibh sed pretium accumsan. Ut eu sollicitudin risus. Morbi iaculis, justo id gravida commodo, ipsum orci sollicitudin nulla, sit amet pellentesque urna sem sit amet nisi. Sed dolor turpis, posuere ac ante vel, molestie posuere tellus. Morbi facilisis tortor vitae augue ultricies, et viverra mi lacinia. Ut auctor viverra diam, a elementum turpis placerat non. Duis dapibus aliquet magna sed tincidunt. Vivamus vehicula, ligula vel congue hendrerit, erat nisl sodales metus, eu convallis justo risus eget odio.</p>
@@ -82,7 +82,7 @@ class Sub {
             </div>
         `
         const expContent = `
-            <div class="js-menuwrap">
+            <div class="js-experience" id="exp-exists">
                 <a class="js-close" id="image-close">×</a>
                 <br>
                 <p>Nunc scelerisque viverra tincidunt. Mauris sodales nibh sed pretium accumsan. Ut eu sollicitudin risus. Morbi iaculis, justo id gravida commodo, ipsum orci sollicitudin nulla, sit amet pellentesque urna sem sit amet nisi. Sed dolor turpis, posuere ac ante vel, molestie posuere tellus. Morbi facilisis tortor vitae augue ultricies, et viverra mi lacinia. Ut auctor viverra diam, a elementum turpis placerat non. Duis dapibus aliquet magna sed tincidunt. Vivamus vehicula, ligula vel congue hendrerit, erat nisl sodales metus, eu convallis justo risus eget odio.</p>
@@ -103,27 +103,33 @@ class Sub {
               html: profileContent
             });
 
-            if (profile) {
-                TweenLite.fromTo(profile, 1, 
-                    {
-                        autoAlpha:1, 
-                        
-                    }, {
+            if (document.getElementById('menu-wrap')) {
+                if (document.getElementById('exp-exists')) {
+                    const expOut = document.getElementById('menu-wrap')
+                    document.body.appendChild(profile)
+                    let tl = new TimelineLite()
+                    tl.to(expOut, 1, {
                         autoAlpha:0, 
-                        x: '500%'                        
-                    },
-                ease: Expo.easeInOut,
-                y: 0
+                        x: '500%', 
+                        ease: Expo.easeInOut,
+                        y: 0
+                    });
+                    tl.from(profile, 1, {
+                        autoAlpha:0, 
+                        x: '500%', 
+                        ease: Expo.easeInOut,
+                        y: 0
+                    });
+                }
+            } else {
+                document.body.appendChild(profile)
+                TweenLite.from(profile, 1, {
+                    autoAlpha:0, 
+                    x: '500%', 
+                    ease: Expo.easeInOut,
+                    y: 0
                 });
             }
-
-            document.body.appendChild(profile)
-            TweenLite.from(profile, 1, {
-                autoAlpha:0, 
-                x: '500%', 
-                ease: Expo.easeInOut,
-                y: 0
-            });
 
         } else if ( classes.has(target, 'js-experience') ) {
 
@@ -134,14 +140,34 @@ class Sub {
               styles: '`is-exp-content`',
               html: expContent
             });
-            document.body.appendChild(experience)
-            TweenLite.from(experience, 1, {
-                autoAlpha:0, 
-                x: '500%', 
-                ease: Expo.easeInOut,
-                y: 0
-            });
 
+            if (document.getElementById('menu-wrap')) {
+                if (document.getElementById('profile-exists')) {
+                    const profileOut = document.getElementById('menu-wrap')
+                    document.body.appendChild(experience)
+                    let tl = new TimelineLite()
+                    tl.to(profileOut, 1, {
+                        autoAlpha:0, 
+                        x: '500%', 
+                        ease: Expo.easeInOut,
+                        y: 0
+                    });
+                    tl.from(experience, 1, {
+                        autoAlpha:0, 
+                        x: '500%', 
+                        ease: Expo.easeInOut,
+                        y: 0
+                    });
+                }
+            } else {
+                document.body.appendChild(experience)
+                TweenLite.from(profile, 1, {
+                    autoAlpha:0, 
+                    x: '500%', 
+                    ease: Expo.easeInOut,
+                    y: 0
+                });
+            }
         }
 
     }
