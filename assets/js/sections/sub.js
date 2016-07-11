@@ -120,6 +120,9 @@ class Sub {
                         ease: Expo.easeInOut,
                         y: 0
                     });
+                    console.log(expOut)
+                    document.body.removeChild(expOut)
+                    console.log(expOut)
                 }
             } else {
                 document.body.appendChild(profile)
@@ -158,6 +161,9 @@ class Sub {
                         ease: Expo.easeInOut,
                         y: 0
                     });
+                    console.log(profileOut)
+                    document.body.removeChild(profileOut)
+                    console.log(profileOut)
                 }
             } else {
                 document.body.appendChild(experience)
