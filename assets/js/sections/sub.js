@@ -213,9 +213,10 @@ class Sub {
     animateOut(req, done) {
          
         classes.remove(config.$body, `is-${this.slug}`)
-
+        const menuWrapOut = document.getElementById('menu-wrap')
         const tl = new TimelineMax({ paused: true, onComplete: done })
         this.el && tl.to(this.el, 0.7, { x: '-320', ease: Expo.easeInOut, clearProps: 'all' })
+        tl.to( menuWrapOut, 0.5, {autoAlpha:0, x: '500%', ease: Expo.easeInOut, clearProps: 'all' });
         tl.restart()
     }
     
