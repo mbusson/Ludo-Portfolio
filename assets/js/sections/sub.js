@@ -64,6 +64,7 @@ class Sub {
     dataAdded(done) {
         on(this.ui.profile,'click', this.handleMenu)
         on(this.ui.experience, 'click', this.handleMenu)
+        on(this.ui.closeabout, 'click', this.handleClosure)
     }
 
     handleMenu(e) {
@@ -158,7 +159,7 @@ class Sub {
                         console.log(profileOut)
                     }
                     let tl = new TimelineLite()
-                    tl.to(profileOut, 1, {
+                    tl.to(profileOut, 0.5, {
                         autoAlpha:0, 
                         x: '500%', 
                         ease: Expo.easeInOut,
@@ -183,6 +184,10 @@ class Sub {
             }
         }
 
+    }
+
+    handleClosure(req, done) {
+        console.log('clic detected')
     }
     
     animateIn(req, done) {
