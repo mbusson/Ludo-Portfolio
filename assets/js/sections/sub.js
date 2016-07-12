@@ -73,8 +73,6 @@ class Sub {
 
         const profileContent = `
             <div class="js-profile" id="profile-exists">
-                <a class="js-close" id="image-close">×</a>
-                <br>
                 <p>Nunc scelerisque viverra tincidunt. Mauris sodales nibh sed pretium accumsan. Ut eu sollicitudin risus. Morbi iaculis, justo id gravida commodo, ipsum orci sollicitudin nulla, sit amet pellentesque urna sem sit amet nisi. Sed dolor turpis, posuere ac ante vel, molestie posuere tellus. Morbi facilisis tortor vitae augue ultricies, et viverra mi lacinia. Ut auctor viverra diam, a elementum turpis placerat non. Duis dapibus aliquet magna sed tincidunt. Vivamus vehicula, ligula vel congue hendrerit, erat nisl sodales metus, eu convallis justo risus eget odio.</p>
                 <br>
                 <p>Nulla facilisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque vel turpis nulla. Pellentesque congue tortor tellus, id hendrerit erat vestibulum a. Sed fermentum vel sapien blandit fermentum. Proin eget lectus sollicitudin, accumsan enim ut, dictum ante. Nulla sed viverra lacus, at imperdiet turpis. Nam non iaculis risus. Fusce et blandit sapien. Nullam quis pretium diam, nec sagittis mauris. Mauris ut convallis metus. Curabitur ultrices erat eu risus ornare, ut hendrerit erat ultricies. Sed sit amet quam sed metus ultrices sagittis nec eu leo.</p>
@@ -84,8 +82,6 @@ class Sub {
         `
         const expContent = `
             <div class="js-experience" id="exp-exists">
-                <a class="js-close" id="image-close">×</a>
-                <br>
                 <p>Nunc scelerisque viverra tincidunt. Mauris sodales nibh sed pretium accumsan. Ut eu sollicitudin risus. Morbi iaculis, justo id gravida commodo, ipsum orci sollicitudin nulla, sit amet pellentesque urna sem sit amet nisi. Sed dolor turpis, posuere ac ante vel, molestie posuere tellus. Morbi facilisis tortor vitae augue ultricies, et viverra mi lacinia. Ut auctor viverra diam, a elementum turpis placerat non. Duis dapibus aliquet magna sed tincidunt. Vivamus vehicula, ligula vel congue hendrerit, erat nisl sodales metus, eu convallis justo risus eget odio.</p>
                 <br>
                 <p>Nulla facilisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque vel turpis nulla. Pellentesque congue tortor tellus, id hendrerit erat vestibulum a. Sed fermentum vel sapien blandit fermentum. Proin eget lectus sollicitudin, accumsan enim ut, dictum ante. Nulla sed viverra lacus, at imperdiet turpis. Nam non iaculis risus. Fusce et blandit sapien. Nullam quis pretium diam, nec sagittis mauris. Mauris ut convallis metus. Curabitur ultrices erat eu risus ornare, ut hendrerit erat ultricies. Sed sit amet quam sed metus ultrices sagittis nec eu leo.</p>
@@ -93,94 +89,97 @@ class Sub {
             </div>
         `
 
+        let wrapDetector = document.getElementById('menu-wrap');
+        if (wrapDetector === null) {
+            if ( classes.has(target, 'js-profile') ) {
 
-        if ( classes.has(target, 'js-profile') ) {
+                console.log('clic profil')
+                
+                const profile = create({
+                  selector: 'div',
+                  id: 'menu-wrap',
+                  styles: '`is-profile-content`',
+                  html: profileContent
+                });
 
-            console.log('clic profil')
-            const profile = create({
-              selector: 'div',
-              id: 'menu-wrap',
-              styles: '`is-profile-content`',
-              html: profileContent
-            });
-
-            if (document.getElementById('menu-wrap')) {
-                if (document.getElementById('exp-exists')) {
-                    const expOut = document.getElementById('menu-wrap')
+                if (document.getElementById('menu-wrap')) {
+                    if (document.getElementById('exp-exists')) {
+                        const expOut = document.getElementById('menu-wrap')
+                        document.body.appendChild(profile)
+                        function removeExpMenu() {
+                            console.log(expOut)
+                            document.body.removeChild(expOut)
+                            console.log(expOut)
+                        }
+                        let tl = new TimelineLite()
+                        tl.to(expOut, 0.5, {
+                            autoAlpha:0, 
+                            x: '500%', 
+                            ease: Expo.easeInOut,
+                            y: 0
+                        });
+                        tl.from(profile, 1, {
+                            autoAlpha:0, 
+                            x: '500%', 
+                            ease: Expo.easeInOut,
+                            y: 0
+                        });
+                        tl.addPause(1.5, removeExpMenu);
+                        
+                    }
+                } else {
                     document.body.appendChild(profile)
-                    function removeExpMenu() {
-                        console.log(expOut)
-                        document.body.removeChild(expOut)
-                        console.log(expOut)
-                    }
-                    let tl = new TimelineLite()
-                    tl.to(expOut, 0.5, {
+                    TweenLite.from(profile, 1, {
                         autoAlpha:0, 
                         x: '500%', 
                         ease: Expo.easeInOut,
                         y: 0
                     });
-                    tl.from(profile, 1, {
-                        autoAlpha:0, 
-                        x: '500%', 
-                        ease: Expo.easeInOut,
-                        y: 0
-                    });
-                    tl.addPause(1.5, removeExpMenu);
-                    
                 }
-            } else {
-                document.body.appendChild(profile)
-                TweenLite.from(profile, 1, {
-                    autoAlpha:0, 
-                    x: '500%', 
-                    ease: Expo.easeInOut,
-                    y: 0
+
+            } else if ( classes.has(target, 'js-experience') ) {
+
+                console.log('clic experience')
+                const experience = create({
+                  selector: 'div',
+                  id: 'menu-wrap',
+                  styles: '`is-exp-content`',
+                  html: expContent
                 });
-            }
 
-        } else if ( classes.has(target, 'js-experience') ) {
-
-            console.log('clic experience')
-            const experience = create({
-              selector: 'div',
-              id: 'menu-wrap',
-              styles: '`is-exp-content`',
-              html: expContent
-            });
-
-            if (document.getElementById('menu-wrap')) {
-                if (document.getElementById('profile-exists')) {
-                    const profileOut = document.getElementById('menu-wrap')
+                if (document.getElementById('menu-wrap')) {
+                    if (document.getElementById('profile-exists')) {
+                        const profileOut = document.getElementById('menu-wrap')
+                        document.body.appendChild(experience)
+                        function removeProfileMenu() {
+                            console.log(profileOut)
+                            document.body.removeChild(profileOut)
+                            console.log(profileOut)
+                        }
+                        let tl = new TimelineLite()
+                        tl.to(profileOut, 0.5, {
+                            autoAlpha:0, 
+                            x: '500%', 
+                            ease: Expo.easeInOut,
+                            y: 0
+                        });
+                        tl.from(experience, 1, {
+                            autoAlpha:0, 
+                            x: '500%', 
+                            ease: Expo.easeInOut,
+                            y: 0
+                        });
+                        tl.addPause(1.5, removeProfileMenu);
+                    }
+                } else {
                     document.body.appendChild(experience)
-                    function removeProfileMenu() {
-                        console.log(profileOut)
-                        document.body.removeChild(profileOut)
-                        console.log(profileOut)
-                    }
-                    let tl = new TimelineLite()
-                    tl.to(profileOut, 0.5, {
+                    TweenLite.from(experience, 1, {
                         autoAlpha:0, 
                         x: '500%', 
                         ease: Expo.easeInOut,
                         y: 0
                     });
-                    tl.from(experience, 1, {
-                        autoAlpha:0, 
-                        x: '500%', 
-                        ease: Expo.easeInOut,
-                        y: 0
-                    });
-                    tl.addPause(1.5, removeProfileMenu);
                 }
-            } else {
-                document.body.appendChild(experience)
-                TweenLite.from(profile, 1, {
-                    autoAlpha:0, 
-                    x: '500%', 
-                    ease: Expo.easeInOut,
-                    y: 0
-                });
             }
         }
 
