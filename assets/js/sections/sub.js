@@ -188,6 +188,13 @@ class Sub {
 
     handleClosure(req, done) {
         console.log('clic detected')
+        const menuWrapOut = document.getElementById('menu-wrap')
+        TweenLite.to(menuWrapOut, 0.5, {
+            autoAlpha:0, 
+            x: '500%', 
+            ease: Expo.easeInOut,
+            y: 0
+        });
     }
     
     animateIn(req, done) {
