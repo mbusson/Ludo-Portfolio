@@ -5,4 +5,3 @@ Static portfolio for artist Luvy Jones using [SassyPug](https://github.com/mbuss
 ### To Do
 
 - [ ] Preloader (make it animate in and out in a better fashion)
-- [ ] Responsiveness
