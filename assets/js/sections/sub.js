@@ -88,99 +88,63 @@ class Sub {
                 <br>
             </div>
         `
+        const profile = create({
+              selector: 'div',
+              id: 'menu-wrap',
+              styles: '`is-profile-content`',
+              html: profileContent
+            });
+        const experience = create({
+              selector: 'div',
+              id: 'menu-wrap',
+              styles: '`is-exp-content`',
+              html: expContent
+            });
 
-        let wrapDetector = document.getElementById('menu-wrap');
-        if (wrapDetector === null) {
-            if ( classes.has(target, 'js-profile') ) {
 
-                console.log('clic profil')
-                
-                const profile = create({
-                  selector: 'div',
-                  id: 'menu-wrap',
-                  styles: '`is-profile-content`',
-                  html: profileContent
+        function removeMenuWrap() {
+            const menuOut = document.getElementById('menu-wrap')
+
+            function cleanUp() {document.body.removeChild(menuOut);}
+
+                let tl = new TimelineLite()
+                tl.to(menuOut, 0.5, {
+                    autoAlpha:0, 
+                    x: '500%', 
+                    ease: Expo.easeInOut,
+                    y: 0
                 });
+                tl.addPause(0.5, cleanUp);
 
-                if (document.getElementById('menu-wrap')) {
-                    if (document.getElementById('exp-exists')) {
-                        const expOut = document.getElementById('menu-wrap')
-                        document.body.appendChild(profile)
-                        function removeExpMenu() {
-                            console.log(expOut)
-                            document.body.removeChild(expOut)
-                            console.log(expOut)
-                        }
-                        let tl = new TimelineLite()
-                        tl.to(expOut, 0.5, {
-                            autoAlpha:0, 
-                            x: '500%', 
-                            ease: Expo.easeInOut,
-                            y: 0
-                        });
-                        tl.from(profile, 1, {
-                            autoAlpha:0, 
-                            x: '500%', 
-                            ease: Expo.easeInOut,
-                            y: 0
-                        });
-                        tl.addPause(1.5, removeExpMenu);
-                        
-                    }
-                } else {
-                    document.body.appendChild(profile)
-                    TweenLite.from(profile, 1, {
-                        autoAlpha:0, 
-                        x: '500%', 
-                        ease: Expo.easeInOut,
-                        y: 0
-                    });
-                }
+            console.log('removed previous menu-wrap')
+        }
 
-            } else if ( classes.has(target, 'js-experience') ) {
-
-                console.log('clic experience')
-                const experience = create({
-                  selector: 'div',
-                  id: 'menu-wrap',
-                  styles: '`is-exp-content`',
-                  html: expContent
+        function printMenu(name) {
+            if (document.getElementById('menu-wrap')) {
+                removeMenuWrap()
+                document.body.appendChild(name)
+                TweenLite.from(name, 1, {
+                    autoAlpha:0, 
+                    x: '500%', 
+                    ease: Expo.easeInOut,
+                    y: 0
                 });
-
-                if (document.getElementById('menu-wrap')) {
-                    if (document.getElementById('profile-exists')) {
-                        const profileOut = document.getElementById('menu-wrap')
-                        document.body.appendChild(experience)
-                        function removeProfileMenu() {
-                            console.log(profileOut)
-                            document.body.removeChild(profileOut)
-                            console.log(profileOut)
-                        }
-                        let tl = new TimelineLite()
-                        tl.to(profileOut, 0.5, {
-                            autoAlpha:0, 
-                            x: '500%', 
-                            ease: Expo.easeInOut,
-                            y: 0
-                        });
-                        tl.from(experience, 1, {
-                            autoAlpha:0, 
-                            x: '500%', 
-                            ease: Expo.easeInOut,
-                            y: 0
-                        });
-                        tl.addPause(1.5, removeProfileMenu);
-                    }
-                } else {
-                    document.body.appendChild(experience)
-                    TweenLite.from(experience, 1, {
-                        autoAlpha:0, 
-                        x: '500%', 
-                        ease: Expo.easeInOut,
-                        y: 0
-                    });
-                }
+            } else {
+                document.body.appendChild(name)
+                TweenLite.from(name, 1, {
+                    autoAlpha:0, 
+                    x: '500%', 
+                    ease: Expo.easeInOut,
+                    y: 0
+                });
             }
+            console.log('menu created')
+        }
+
+        if ( classes.has(target, 'js-profile') ) {       
+            printMenu(profile)
+        } else if ( classes.has(target, 'js-experience') ) {
+            printMenu(experience)
         }
 
     }
